@@ -8,7 +8,7 @@ URL: https://github.com/nh602/git-practice-scenario.git
 
 It was confirmed that the directions are as follows in this screenshot. I'm going to follow this format in task 6 onward now that I understand better.
 
-![Instructions](/img/instructions.png)
+![Instructions](./img/instructions.png)
 
 
 
@@ -24,7 +24,7 @@ I ran `git init` in my directory. I also ran `git remote add origin https://...`
 I then created the readme and cart files, and then committed them one by one.
 Here's the output which shows all my commits and then the `git log --oneline` command.
 
-![Task 1 Verify](/img/task1verify.png)
+![Task 1 Verify](./img/task1verify.png)
 
 #### Guidance
 
@@ -32,7 +32,7 @@ Here's the output which shows all my commits and then the `git log --oneline` co
 
 `git config --local` is the default when running the config command and keeps the change local to the repo. 
 
-![Task 1 Guidance 1](/img/task1guidance1.png)
+![Task 1 Guidance 1](./img/task1guidance1.png)
 
 2. Staging and committing are separate steps. What does git status show for a file that is untracked, versus one that is staged? 
 
@@ -42,19 +42,19 @@ One that is untracked is red and in the bottom section called Untracked. One tha
 
 Next I made an edit to the cart.txt file in vim and then discarded the change with `git restore cart.txt`.
 
-![Task 2 Verify 1](/img/task2verify1.png)
+![Task 2 Verify 1](./img/task2verify1.png)
 
 Then i created the `secrets.env` and `debug.log` files; added the two lines to the gitignore with `echo >> .gitignore` and then showed the `git status` which doesn't show the two files as Untracked (meaning gitignore is working).
 
-![Task 2 Verify 2](/img/task2verify2.png)
+![Task 2 Verify 2](./img/task2verify2.png)
 
 Next I made an edit in vim to the cart.txt file, staged it with `git add cart.txt`, and then unstaged the change with `git restore --staged cart.txt`. You can see that since it's still in the not Staged section that the file changes remained. 
 
-![Task 2 Verify 3](/img/task2verify3.png)
+![Task 2 Verify 3](./img/task2verify3.png)
 
 Next I added the cart.txt file again, and committed with the message  `ad payment`. then I used `git commit --amend` to edit the message to `add payment` which you can see below.
 
-![Task 2 Verify 4](/img/task2verify4.png)
+![Task 2 Verify 4](./img/task2verify4.png)
 
 
 #### Guidance
@@ -75,7 +75,7 @@ I was able to run `git merge feature/reviews` from main, which brought up nano f
 
 Here's my `git log --oneline --graph --all` so far for verification on this step.
 
-![Task 3 Verify 1](/img/task3verify1.png)
+![Task 3 Verify 1](./img/task3verify1.png)
 
 #### Guidance
 1. A fast-forward is possible only when main is an ancestor of the branch you merge. Check with the graph log before you merge and predict the outcome. 
@@ -120,7 +120,7 @@ Now I'll try merge again, but I'll resolve the conflict by editing the file afte
 
 Heres an annotated picture of that file that shows the parts
 
-![Task 4 Verify 1](/img/task4verify1.png)
+![Task 4 Verify 1](./img/task4verify1.png)
 
 2. During a merge, git status lists the file as modified on both sides. After you edit it, what must you tell Git so it knows the conflict is resolved? 
 
@@ -137,7 +137,7 @@ On the hotfix branch I made an edit to reviews, commited, switched back to main,
 Finally I ran `git stash pop` to get my most recent stash applied to main so i can continue working.
 
 In this image you can see my stash, my changes, my merge, and then my apply and showing the stash is empty after.
-![Task 5 Verify 1](/img/task5verify1.png)
+![Task 5 Verify 1](./img/task5verify1.png)
 
 ### Task 6
 
