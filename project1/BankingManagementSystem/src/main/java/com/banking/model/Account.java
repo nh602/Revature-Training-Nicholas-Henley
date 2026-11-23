@@ -2,6 +2,8 @@ package com.banking.model;
 
 import java.util.Date;
 
+import com.banking.exception.InsufficientBalanceException;
+
 /**
  * My intended flow will be 
  *      1. Some UI or code flow will trigger account creation 
@@ -22,6 +24,23 @@ public abstract class Account {
         this.customerId = customerId;
         this.balance = balance;
         this.createdAt = createdAt;
+    }
+
+    public void withdraw(double amount) throws InsufficientBalanceException {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdrawal amount must be positive.");
+        }
+        if (amount > balance) {
+            throw new InsufficientBalanceException("Insufficient funds for withdrawal.");
+        }
+        balance -= amount;
+    }
+
+    public void deposit(double amount) throws IllegalArgumentException {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Deposit amount must be positive.");
+        }
+        balance += amount;
     }
 
     public long getAccountNumber() {
